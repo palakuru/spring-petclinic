@@ -20,6 +20,9 @@
     <java.version>17</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <sonar.host.url>http://ec2-3-131-162-202.us-east-2.compute.amazonaws.com:9000/</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>admin123</sonar.password>
     <!-- Important for reproducible builds. Update using e.g. ./mvnw versions:set -DnewVersion=... -->
     <project.build.outputTimestamp>2023-05-10T07:42:50Z</project.build.outputTimestamp>
 
@@ -140,7 +143,20 @@
     </dependency>
 
   </dependencies>
-
+	<distributionManagement>
+	    <repository>
+	      <id>nexus</id>
+	      <name>Nexus Repository</name>
+	      <url>http://ec2-3-133-101-56.us-east-2.compute.amazonaws.com:8081/repository/vodafonerelease/</url>
+	    </repository>
+	    
+	    <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Nexus Repository </name>
+	      <url>http://ec2-3-133-101-56.us-east-2.compute.amazonaws.com:8081/repository/vodafonesnapshot/</url>
+	    </snapshotRepository>
+	    
+	</distributionManagement>
   <build>
     <plugins>
       <plugin>
